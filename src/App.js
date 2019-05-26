@@ -3,6 +3,14 @@ import './css/style.css';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      videos: this.data.videos
+    }
+  }
+
   fetchVideos = async () => {
     const url = "https://pt.protoawe.com/api/video-promotion/v1/client/list?psid=zkygge&pstool=421_1&campaign_id=110795&accessKey=8345cd885505b6e7bcfb634eb402ff86&ms_notrack=1&campaign=110795&type=&sexualOrientation=straight&forcedPerformers=&limit=25&primaryColor=%238AC437&labelColor=%23212121";
 
@@ -16,7 +24,7 @@ class App extends Component {
     try {
       const response = await fetch(url, options);
       const { data } = await response.json();
-      const videos = data.videos;
+      return data
     } catch (error) {
       console.log(error);
     }
@@ -29,7 +37,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        {console.log(this.props.videos)}
+        {this.state.videos.map(image => <img src={image.profileImage} alt="" />)}
       </div>
     )
   }
