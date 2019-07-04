@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Ranga&display=swap');
+
+body {
+  background-color: black;
+}
+
+.wrapper {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.videos img {
+  margin-bottom: 15px;
+}
+
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+h1 {
+  color: white;
+  font-family: 'Ranga', cursive;
+  font-size: 64px;
+  text-align: center;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  color: white;
+}
